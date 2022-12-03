@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.div {
+    min-height: 92vh !important;
+    overflow: hidden;
+}
+
+.bg-nav {
+    background-color: #255F9B;
+}
+
+.bg-photo {
+    height: 92vh;
+    background: linear-gradient(to left bottom,
+            rgba(128, 210, 237, 0.8),
+            rgba(0, 81, 128, 0.7)),
+        url('../imgs/background.jpeg');
+    background-size: cover;
+}
+
+.backgroundImage {
+    background-image: url("../imgs/ackground.jpeg");
+    background-size: 110%;
+}
+
+.checkOut{
+    width: 70px;
+    height: 70px;
+    line-height: 2.8;
+}
+
+.img-modal{
+    width: 400px;
+    height: 200px;
+}
