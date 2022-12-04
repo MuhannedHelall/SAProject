@@ -4,13 +4,12 @@
     box-sizing: border-box;
 }
 
-.div {
-    min-height: 92vh !important;
-    overflow: hidden;
-}
-
 .bg-nav {
     background-color: #255F9B;
+}
+
+.bg-grey {
+    background-color: #eee !important;
 }
 
 .bg-photo {
@@ -27,8 +26,17 @@
     background-size: 110%;
 }
 
-.checkOut{
+.div {
+    min-height: 92vh !important;
+    overflow: hidden;
+}
+
+.checkOut {
     width: 50px;
     height: 50px;
     line-height: 2;
+}
+
+.p{
+    text-align: justify;
 }
