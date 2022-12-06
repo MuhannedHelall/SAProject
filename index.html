@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body>
+<body onload="setIds()">
     <nav id="navbar" class="navbar navbar-dark bg-nav navbar-expand-lg sticky-top px-5 shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand text-white fw-bold" href="index.html">SOM Pharmacy</a>
@@ -67,8 +67,7 @@
                     <p class="fs-5">delivered to your door in about 60 minutes!</p>
                     <div class="mt-4 pt-3">
                         <p class="fs-2 fw-bold m-2">Try it out today!</p>
-                        <a class="btn btn-primary rounded-pill px-5 py-2 my-2 fs-4 text-uppercase"
-                            data-bs-toggle="modal" data-bs-target="#checkOut">
+                        <a href="#offers" class="btn btn-primary rounded-pill px-5 py-2 my-2 fs-4 text-uppercase">
                             Shop now !
                         </a>
                     </div>
@@ -202,7 +201,7 @@
                     <button type="button" data-bs-target="#offersCarousel" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
                 </div>
-                <div class="carousel-inner mb-5">
+                <div class="carousel-inner mb-5" id="offersList">
                     <div class="carousel-item active">
                         <div class="p-5 text-center">
                             <img src="assets/imgs/2.jfif" class="img-thumbnail" alt="">
@@ -212,9 +211,9 @@
                                 cupiditate?
                             </p>
                             <p class="text-center text-uppercase">
-                                price: <span class="text-decoration-line-through">10$</span> 5$
+                                price: <span>5</span>$ <span class="text-decoration-line-through">10$</span>
                             </p>
-                            <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                            <a class="btn btn-primary" onclick="selectOffer(this)">Add to cart</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -226,9 +225,9 @@
                                 cupiditate?
                             </p>
                             <p class="text-center text-uppercase">
-                                price: <span class="text-decoration-line-through">10$</span> 5$
+                                price: <span>5</span>$ <span class="text-decoration-line-through">10$</span>
                             </p>
-                            <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                            <a class="btn btn-primary" onclick="selectOffer(this)">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -259,7 +258,7 @@
                     <button type="button" data-bs-target="#productsCarousel" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div> -->
-                <div class="carousel-inner px-5 mx-5">
+                <div class="carousel-inner px-5 mx-5" id="productList">
                     <div class="carousel-item active ">
                         <div class="row">
                             <div class="col-12 col-lg-4 d-flex justify-content-center flex-wrap p-2">
@@ -270,8 +269,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 d-flex justify-content-center flex-wrap p-2">
@@ -282,8 +281,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 d-flex justify-content-center flex-wrap p-2">
@@ -294,8 +293,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -310,8 +309,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 d-flex justify-content-center flex-wrap p-2">
@@ -322,8 +321,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 d-flex justify-content-center flex-wrap p-2">
@@ -334,8 +333,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -350,8 +349,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 d-flex justify-content-center flex-wrap p-2">
@@ -362,8 +361,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 d-flex justify-content-center flex-wrap p-2">
@@ -374,8 +373,8 @@
                                     cupiditate?
                                 </p>
                                 <div class="d-flex justify-content-around w-100">
-                                    <p class="text-center text-uppercase">price: 5$</p>
-                                    <a class="btn btn-primary" onclick="addCounter()">Add to cart</a>
+                                    <p class="text-center text-uppercase">price: <span>5</span>$</p>
+                                    <a class="btn btn-primary" onclick="selectProduct(this)">Add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -780,56 +779,47 @@
                     <h1 class="modal-title fs-5" id="checkOutModal">Check Out</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="row text-center border rounded m-2 p-2">
+                <div class="modal-body" id="selectedProductsList">
+                    <div class="row text-center border rounded m-2 p-2 d-none">
                         <div class="col-lg-4 col-12">
                             <img src="assets/imgs/2.jfif" class="rounded-2 w-100 h-100 py-lg-0 py-2" alt="">
                         </div>
                         <div class="col-lg-8 col-12">
                             <h1 class="text-center">Hi there 1</h1>
                             <div class="d-flex justify-content-around">
-                                <p class="text-center text-uppercase">price: 5$</p>
-                                <p class="text-center text-uppercase">Total price: 5$</p>
+                                <p class="text-center text-uppercase">price: <span>0</span>$</p>
+                                <p class="text-center text-uppercase">Total price: <span>0</span>$</p>
                             </div>
-                            <p class="text-center text-uppercase">amount: 1</p>
-                            <a class="btn btn-primary">Add</a>
-                            <a class="btn btn-danger">Remove</a>
-                        </div>
-                    </div>
-                    <div class="row text-center border rounded m-2 p-2">
-                        <div class="col-lg-4 col-12">
-                            <img src="assets/imgs/1.jfif" class="rounded-2 w-100 h-100 py-lg-0 py-2" alt="">
-                        </div>
-                        <div class="col-lg-8 col-12">
-                            <h1 class="text-center">Hi there 2</h1>
-                            <div class="d-flex justify-content-around">
-                                <p class="text-center text-uppercase">price: 7$</p>
-                                <p class="text-center text-uppercase">Total price: 14$</p>
-                            </div>
-                            <p class="text-center text-uppercase">amount: 2</p>
-                            <a class="btn btn-primary">Add</a>
-                            <a class="btn btn-danger">Remove</a>
-                        </div>
-                    </div>
-                    <div class="row text-center border rounded m-2 p-2">
-                        <div class="col-lg-4 col-12">
-                            <img src="assets/imgs/2.jfif" class="rounded-2 w-100 h-100 py-lg-0 py-2" alt="">
-                        </div>
-                        <div class="col-lg-8 col-12">
-                            <h1 class="text-center">Hi there 1</h1>
-                            <div class="d-flex justify-content-around">
-                                <p class="text-center text-uppercase">price: 5$</p>
-                                <p class="text-center text-uppercase">Total price: 5$</p>
-                            </div>
-                            <p class="text-center text-uppercase">amount: 1</p>
-                            <a class="btn btn-primary">Add</a>
-                            <a class="btn btn-danger">Remove</a>
+                            <p class="text-center text-uppercase">amount: <span>0</span></p>
+                            <a class="btn btn-primary" onclick="addItem(this)">Add</a>
+                            <a class="btn btn-danger" onclick="removeItem(this)" data-bs-toggle="modal"
+                                data-bs-target="#checkOut">Remove</a>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="#" class="btn btn-primary">Check Out</a>
+                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#totalCost"
+                        onclick="calculateTotalCost()">Check Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="totalCost" tabindex="-1" aria-labelledby="totalCostLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="totalCostLabel">Total Cost</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center fs-3" id="finalCost">Your Total Cost is: <span>200</span>$</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#totalCost">Proceed with payment</button>
                 </div>
             </div>
         </div>
@@ -838,7 +828,7 @@
 
     <!-- Here is the Check out beginning -->
     <div class="d-flex justify-content-end fixed-bottom m-2" data-bs-toggle="modal" data-bs-target="#checkOut">
-        <a href="#" class="text-decoration-none">
+        <a class="text-decoration-none">
             <p class="bg-primary rounded-circle text-center checkOut text-white fs-4 opacity-50 d-none"
                 onmouseenter="showIcon(this)" onmouseleave="blurIcon(this)">0</p>
         </a>
