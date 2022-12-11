@@ -149,3 +149,18 @@ function calculateTotalCost() {
     }
     finalCost.innerText = cost;
 }
+
+function selectItem(link) {
+    let product = link.parentNode.parentNode.parentNode;
+    let source = product.children[0].src;
+    let title = product.children[1].children[1].innerText;
+    let price = product.children[1].children[2].children[0].children[0].innerText;
+    let data = {
+        imgSrc: source,
+        productName: title,
+        productPrice: price,
+        id: product.id,
+        button: link
+    };
+    addToCart(data);
+}
